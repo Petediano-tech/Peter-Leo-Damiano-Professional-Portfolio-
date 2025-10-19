@@ -1,0 +1,98 @@
+/* AdSense Styles */
+.adsense-banner, .adsense-inarticle, .adsense-display {
+    margin: 40px auto;
+    text-align: center;
+    padding: 20px 0;
+    background: var(--light-color);
+    border-radius: var(--border-radius);
+}
+
+.adsense-banner ins, .adsense-inarticle ins, .adsense-display ins {
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+/* Fixed Hero Section Text */
+.hero-subtitle {
+    font-size: 1.8rem;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: var(--gray-color);
+    line-height: 1.4;
+}
+
+/* Remove problematic animations and fix scrolling */
+.hero-content {
+    flex: 1;
+    max-width: 650px;
+    position: relative;
+    z-index: 10;
+}
+
+/* Fix mobile text collapse */
+@media (max-width: 768px) {
+    .hero-title {
+        font-size: 2.2rem;
+        line-height: 1.2;
+    }
+    
+    .hero-subtitle {
+        font-size: 1.2rem;
+        line-height: 1.4;
+        white-space: normal;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+        line-height: 1.6;
+    }
+}
+
+/* Smooth scrolling improvements */
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 80px; /* Account for fixed navbar */
+}
+
+/* Remove heavy animations that cause performance issues */
+.floating-element {
+    animation: float 8s ease-in-out infinite;
+}
+
+/* Simplified animations for better performance */
+@keyframes float {
+    0%, 100% { 
+        transform: translateY(0px); 
+    }
+    50% { 
+        transform: translateY(-20px); 
+    }
+}
+
+/* Fix z-index issues */
+.hero-container {
+    position: relative;
+    z-index: 10;
+}
+
+.hero-background {
+    z-index: 1;
+}
+
+/* Improve scrolling performance */
+.service-card, .product-card, .portfolio-item {
+    transform: translateZ(0);
+    backface-visibility: hidden;
+    perspective: 1000px;
+}
+
+/* Remove heavy blur effects on mobile */
+@media (max-width: 768px) {
+    .navbar {
+        backdrop-filter: none;
+    }
+    
+    .product-card {
+        backdrop-filter: none;
+    }
+}
